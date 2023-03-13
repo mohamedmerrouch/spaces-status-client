@@ -12,7 +12,7 @@ export interface Space {
 export async function addSpace(name: string, sector: string, responsible: string): Promise<Space | undefined> {
     try {
         const response =
-            await axios.post("/spaces", {name, sector, responsible});
+            await axios.post("https://spaces-status-server.onrender.com/spaces", {name, sector, responsible});
         console.log(response.data);
         return response.data as Space;
     } catch (error) {
@@ -24,7 +24,7 @@ export async function addSpace(name: string, sector: string, responsible: string
 export async function deleteSpace(space: Space) {
     try {
         const response =
-            await axios.delete(`/spaces/${space.id}`);
+            await axios.delete(`https://spaces-status-server.onrender.com/spaces/${space.id}`);
         console.log(response.data);
     } catch (error) {
         console.log('error happened', error);
@@ -34,7 +34,7 @@ export async function deleteSpace(space: Space) {
 export async function updateSpace(spaceToUpdate: Space, newSpaceData: Space) {
     try {
         const response =
-            await axios.put(`/spaces/${spaceToUpdate.id}`, newSpaceData);
+            await axios.put(`https://spaces-status-server.onrender.com/spaces/${spaceToUpdate.id}`, newSpaceData);
         console.log(response.data);
     } catch (error) {
         console.log('error happened', error);
@@ -43,7 +43,7 @@ export async function updateSpace(spaceToUpdate: Space, newSpaceData: Space) {
 export async function getSpaces() : Promise<Array<Space> | undefined> {
     try {
         const response =
-            await axios.get("/spaces");
+            await axios.get("https://spaces-status-server.onrender.com/spaces");
         console.log(response.data);
         return response.data;
     } catch (error) {
@@ -55,7 +55,7 @@ export async function getSpaces() : Promise<Array<Space> | undefined> {
 export async function getMySpaces(responsible: string) : Promise<Array<Space> | undefined> {
     try {
         const response =
-            await axios.get(`/spaces/${responsible}`);
+            await axios.get(`https://spaces-status-server.onrender.com/spaces/${responsible}`);
         console.log(response.data);
         return response.data;
     } catch (error) {
