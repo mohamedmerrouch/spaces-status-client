@@ -16,8 +16,7 @@ export default function Dashboard() {
         if(!socket) {
             const newSocket = io('https://spaces-status-server.onrender.com');
             setSocket(newSocket);
-            newSocket.on("receive_change", (data) => {
-                console.log("SHOULD UPDATE DATA", data);
+            newSocket.on("receive_change", () => {
                 submit(null, {
                     action: "/",
                     method: "post",

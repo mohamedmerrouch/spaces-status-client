@@ -83,9 +83,9 @@ export default function MySpaces() {
     return (
         <Container maxWidth="md">
                 <Box sx={{ flexGrow: 1, my: 8}}>
-                    <Typography textAlign='center' variant='h3' component='h4' gutterBottom>Les Espaces Sous La Responsabilite de {responsible}</Typography>
+                    <Typography sx={{fontSize: {xs: 22, md: 32}}} textAlign='center' variant='h3' component='h4' gutterBottom>Les Espaces Sous La Responsabilite de {responsible}</Typography>
                     <Box sx={{ display: 'flex', my: 3, justifyContent: 'center', gap:3 }}>
-                        <FormControl sx={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
+                        <FormControl sx={{display: 'flex', flexDirection: {xs: 'column', lg: 'row'}, gap: '10px'}}>
                             <InputLabel id="sector-label" >Secteur</InputLabel>
                             <Select
                                 labelId="sector-label"
