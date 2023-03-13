@@ -14,7 +14,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         if(!socket) {
-            const newSocket = io('http://localhost:3001');
+            const newSocket = io('https://spaces-status-server.onrender.com');
             setSocket(newSocket);
             newSocket.on("receive_change", (data) => {
                 console.log("SHOULD UPDATE DATA", data);

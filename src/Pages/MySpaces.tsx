@@ -33,7 +33,7 @@ export default function MySpaces() {
 
     useEffect(() => {
         if(!socket) {
-            const newSocket = io('http://localhost:3001');
+            const newSocket = io('https://spaces-status-server.onrender.com');
             setSocket(newSocket);
         }
 
